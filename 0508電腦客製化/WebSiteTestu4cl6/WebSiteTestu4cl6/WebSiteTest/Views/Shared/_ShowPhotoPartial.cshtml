@@ -1,0 +1,36 @@
+﻿@model IndexModel_front
+@using WebSiteTest.Areas.Identity.Pages.Account.Manage
+@section Styles{
+    <style>
+        .gambar{
+            width: 320px; /* 確保圖片填滿容器 */
+            height: 240px;
+            object-fit: cover;
+            /* 根據比例調整圖片大小以填滿容器 */
+           
+        }   
+    </style>
+}
+@*/Identity/Index_front/showPhoto?id=@Model.Id*@
+@if (Model.Input.Picture != null)
+{
+    <img class="gambar img-responsive img-thumbnail" name="item-img-output" id="item-img-output" src="@Url.Page("Index_front", "showPhoto", new { id = Model.Id })" title="@Html.DisplayFor(model => model.Username)" style="width:320px;height:240px" />
+
+
+}
+else
+{
+    <img class="gambar img-responsive img-thumbnail" id="item-img-output" src="@Url.Content("~/images/1280.jpeg")" title="尚無圖片" style="width:320px;height:240px" />
+}
+
+
+
+
+
+
+
+@section Scripts
+{
+  
+
+}

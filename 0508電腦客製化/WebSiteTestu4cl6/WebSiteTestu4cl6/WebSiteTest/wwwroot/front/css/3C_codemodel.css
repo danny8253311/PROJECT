@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#webgl {
+    margin-top: 200px;
+    margin-left: 15%;
+    margin-bottom: 200px;
+}
+
+.row {
+    padding: 100px;
+    background-color: aqua;
+    text-align: center;
+}
+
+#sidebar_left {
+    background-color: #FFECC9;
+    width: 13%;
+    height: 100%;
+    text-align: center;
+    line-height: 800px;
+    float: left;
+}
+
+#sidebar_right {
+    background-color: #FFECC9;
+    width: 13%;
+    height: 100%;
+    text-align: center;
+    line-height: 800px;
+    float: right;
+}
+
+
+#selectOption {
+    margin-right: 0%;
+    margin-top: 20%;
+    /* background-color: #fd8f8f; */
+    width: 15%;
+    height: 100%;
+    line-height: 50px;
+    /* text-align: center; */
+    float: right;
+}
+
+#gameLabel {
+    display: none;
+}
+
+#gameNeeded {
+    display: none;
+}

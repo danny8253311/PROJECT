@@ -1,0 +1,147 @@
+﻿@page
+@model LoginModel_front
+
+
+
+@{
+    ViewData["Title"] = "Log in";
+    Layout = null;
+}
+<link href="~/assets/front/login.css" rel="stylesheet" />
+<link href="~/assets/css/bootstrap.min.css" rel="stylesheet" />
+
+<style>
+
+    .login
+    {
+        margin-top:20%;
+    }
+
+    ::selection {
+        background: #ffc8ff;
+    }
+    body {
+        background-size: cover;
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+    }
+    input {
+        display: block;
+        width: 100%;
+        font-size: 14pt;
+        line-height: 28pt;
+        font-family: "Fjalla One";
+        margin-bottom: 28pt;
+        border: none;
+        border-bottom: 5px solid black;
+        background: #f8f4e5;
+        min-width: 250px;
+        padding-left: 5px;
+        outline: none;
+        color: black;
+    }
+
+        input:focus {
+            border-bottom: 5px solid #ffa580;
+        }
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus {
+            border-bottom: 5px solid #95a4ff;
+            -webkit-text-fill-color: #2A293E;
+            -webkit-box-shadow: 0 0 0px 1000px #f8f4e5 inset;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+
+    #button {
+        /*display: block;*/
+        margin: 0 auto;
+        line-height: 28pt;
+        padding: 0 20px;
+        background: azure;
+        letter-spacing: 2px;
+        transition: 0.2s all ease-in-out;
+        outline: none;
+        border: 1px solid black;
+        box-shadow: 3px 3px 1px 1px #95a4ff, 3px 3px 1px 2px black;
+    }
+
+        #button:hover {
+            background: lightblue;
+            color: white;
+            border: 1px solid black;
+        }
+
+    body {
+        background-image: url("/images/background-sign.png")
+    }
+</style>
+<section>
+    <div id="bg">
+        <canvas></canvas>
+        <canvas></canvas>
+        <canvas></canvas>
+    </div>
+    <div class="login">
+        <form name="userinfoform" method="post" enctype="multipart/form-data" >
+            <input type="hidden" name="enews" value="register">
+            <input name="groupid" type="hidden" id="groupid" value="1">
+            <input name="tobind" type="hidden" id="tobind" value="0">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="contact-us">
+                <label><i class="fa fa-user"></i>用户名稱</label>">
+                <input placeholder="UserName" id="username" asp-for="Input.UserName" class="" autocomplete="username" aria-required="true" />
+               @* <span asp-validation-for="Input.UserName" class="text-danger"></span>*@
+            </div>
+            <div class="contact-us">
+                <label><i class="fa fa-lock"></i>密碼</label>
+                <input placeholder="Password" asp-for="Input.Password" class="" autocomplete="current-password" aria-required="true" id="password"  />
+               @* <span asp-validation-for="Input.Password" class="text-danger"></span>*@
+                <div class="text-center">  
+                    <input id="button" class="btn btn-default" type="submit" name="button" value="登入">
+                    <a href="../Account/Register_front">
+                    <input onclick=""id="button" class="btn btn-default" type="button" name="button" value="註冊">
+                    </a>
+                </div>
+                <div style="margin-top:10px">
+                    <p>
+                        <a id="forgot-password"  asp-page="./ForgotPassword">忘記密碼</a>
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<div class="">
+    <section>
+        @{
+            if ((Model.ExternalLogins?.Count ?? 0) == 0)
+            {
+                <div>                 
+                </div>
+            }
+            else
+            {
+                <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                    <div>
+                        <p>
+                            @foreach (var provider in Model.ExternalLogins!)
+                            {
+                                <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                            }
+                        </p>
+                    </div>
+                </form>
+            }
+        }
+    </section>
+</div>
+<script src="https://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+<script src="~/assets/js/login.js"></script>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

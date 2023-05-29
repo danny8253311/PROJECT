@@ -1,0 +1,645 @@
+﻿
+    <!-- Anouncement End -->
+    <!-- Header-default Start -->
+  
+    <!-- Header-default End -->
+    <!-- Body Container -->
+    <div class="page-content">
+
+        <!--Start Breadcrumb Style2-->
+    <section class="breadcrumb-area" style="background-image: url(/images/innerpage/bannercompare.png);">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="breadcrumb-content position-relative text-center  ">
+                        <h2 class="color-white fw-600">顯示卡比較</h2>
+                            <div class="breadcrumb-menu">
+                                <ul class="d-flex align-items-center mt-2 justify-content-center">
+                                    <li>
+                                        <a href="index.html"
+                                           class="d-inline-flex align-items-center color-white hover-base ">
+                                            <i class="flaticon-home pe-2"></i>Home
+                                        </a>
+                                    </li>
+                                    <li class="color-white ms-2 me-2 lh-0"><i class="flaticon-next"></i> </li>
+                                    <li class="color-white active">顯示卡比較</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Breadcrumb Style2-->
+        <!--Start Compare-->
+        <section class="compare pt-120 pb-60" id="app1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12  ">
+                        <div class="compare-table-box">
+                            <div class="compare-table-outer">
+                                <table class="compare-table">
+                                    <thead class="compare-header">
+                                        <tr>
+                                            <th>
+                                                <p class=" font-20 fw-bolder"> 顯示卡 </p>
+                                            </th>
+                                            <th>
+                                                <div class="compare-product-img-1">
+                                                    <img src="" id="GPU-img-A" style="max-width: 100px;">
+                                                </div>
+                                            </th>
+                                            <th>
+                                                <div class="compare-product-img-1">
+                                                    <img src="" id="GPU-img-B" style="max-width: 100px;">
+                                                </div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <h5 class=" font-20 fw-bolder">型號</h5>
+                                            </td>
+                                        <td style="border-right: 1px solid #ededed;">
+                                                <!-- 商品 A option -->
+                                                <select name="" id="GPU-A"
+                                                        style="border: 1px solid #E0E0E0;" v-model>
+                                                <option v-for="item in GpuDTOes" :value="item.productsID" :item.productsID>{{ item.productsID }}</option>
+                                                    </select>
+
+
+                                            </td>
+                                        <td>
+                                                <!-- 商品 B option -->
+                                                <select name="" id="GPU-B"
+                                                    style="border: 1px solid #E0E0E0;">
+                                                <option v-for="item in GpuDTOes" :value="item.productsID" :item.productsID>{{ item.productsID }}</option>
+                                                </select>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5 class=" font-20 fw-bolder">效能對比</h5>
+                                            </td>
+                                            <td style="border-right: 1px solid #ededed;" id="GPU_td_A">
+                                                <div id="GPU-textcontent-A"
+                                                     style="font-size: 15px; color: #339900;">
+                                                    0%
+
+                                                </div>
+                                                <span id="GPU-transition-A"></span>
+
+
+                                            </td>
+
+                                            <td style="border-right: 1px solid #ededed;" id="GPU_td_B">
+                                                <div id="GPU-textcontent-B"
+                                                     style="font-size: 15px; color: #339900;">
+                                                    0%
+
+                                                </div>
+                                                <span id="GPU-transition-B"></span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table width="100%"
+                                       style="table-layout:fixed; text-align: center;overflow-x: auto;min-width: unset;min-width: 991px;"
+                                       class="colortable">
+                                    <tbody>
+                                        <tr>
+                                            <td style="border-right: 1px solid #ededed;" rowspan="0"
+                                                class="detailed-sell">
+                                                <h5 class="font-20 fw-bolder">詳細資訊</h5>
+                                            </td>
+                                            <td style="border: none;">4K mark</td>
+                                            <td style="border: none;" id="GPU-4k-A"></td>
+                                            <td style="border-right: 1px solid #ededed;" id="td_4k">
+                                                <span style="font-size: 12px; color: #339900;"
+                                                      id="textcontent-4K-A">0%</span>
+                                                <span id="transition-4k-A"></span>
+
+
+                                            </td>
+                                            <td>4k mark</td>
+                                            <td style="border: none;" id="GPU-4k-B"></td>
+                                            <td>
+                                                <span style="font-size: 12px; color: #339900;"
+                                                      id="textcontent-4K-B">0%</span>
+                                                <span id="transition-4k-B"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>FHD mark</td>
+                                            <td id="GPU-fhd-A"></td>
+                                            <td>
+                                                <span style="font-size: 12px; color: #339900;"
+                                                      id="textcontent-fhd-A">0%</span>
+                                                <span id="transition-fhd-A"></span>
+                                            </td>
+                                            <td>FHD mark</td>
+                                            <td id="GPU-fhd-B"></td>
+                                            <td>
+                                                <span style="font-size: 12px; color: #339900;"
+                                                      id="textcontent-fhd-B">0%</span>
+                                                <span id="transition-fhd-B"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>BASE mark</td>
+                                            <td id="GPU-base-A"></td>
+                                            <td>
+                                                <span style="font-size: 12px; color: #339900;"
+                                                      id="textcontent-base-A">0%</span>
+                                                <span id="transition-base-A"></span>
+                                            </td>
+                                            <td>BASE mark</td>
+                                            <td id="GPU-base-B"></td>
+                                            <td>
+                                                <span style="font-size: 12px; color: #339900;"
+                                                      id="textcontent-base-B">0%</span>
+                                                <span id="transition-base-B"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>FFXIV GAME 4K</td>
+                                            <td id="GPU-ffxiv-A"></td>
+                                            <td>
+                                                <span style="font-size: 12px; color: #339900;"
+                                                      id="textcontent-ffxiv-A">0%</span>
+                                                <span id="transition-ffxiv-A"></span>
+                                            </td>
+                                            <td>FFXIV GAME 4K</td>
+                                            <td id="GPU-ffxiv-B"></td>
+                                            <td>
+                                                <span style="font-size: 12px; color: #339900;"
+                                                      id="textcontent-ffxiv-B">0%</span>
+                                                <span id="transition-ffxiv-B"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>溫度</td>
+                                            <td id="GPU-temper-A"></td>
+                                            <td></td>
+                                            <td>溫度</td>
+                                            <td id="GPU-temper-B"></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table width="100%" style="table-layout:fixed; text-align: center;"
+                                       class="colortable">
+                                    <tbody>
+                                        <tr>
+                                            <td style="border-right: 1px solid #ededed;padding-top: 10px; padding-bottom: 10px;"
+                                                class="price-sell">
+                                                <h5 class=" font-20 fw-bolder ">價格</h5>
+                                            </td>
+                                            <td class="colorBage1 font-16 price-sell2" id="GPU-price-A"
+                                                style="border-right: 1px solid #ededed;"></td>
+                                            <td class="colorBage1 font-16 price-sell2" id="GPU-price-B"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table width="100%" style="table-layout:fixed; text-align: center;"
+                                       class="colortable">
+                                    <tbody>
+                                        <tr>
+                                            <td style="border-right: 1px solid #ededed;padding-top: 30px; padding-bottom: 30px;"
+                                                class="cart-sell">
+                                                <h5 class="font-20 fw-bolder">商品頁面</h5>
+                                            </td>
+                                            <td style="border-right: 1px solid #ededed;" class="cart-sell2">
+                                                <a href="cart.html" class="btn-base style2">Add To Cart</a>
+                                            </td>
+                                            <td class="cart-sell2">
+                                                <a href="cart.html" class="btn-base style2">
+                                                    Add
+                                                    To Cart
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Order Compare-->
+
+    </div>
+    <!-- End Body Container -->
+    <!-- ===== Footer Start ==== -->
+    
+    <!-- ==== Footer End ==== -->
+    <!-- Cart Drower Start -->
+    <div class="offcanvas cartDrowerOffcanvus offcanvas-end" tabindex="-1" id="offcanvasRight">
+        <div class="offcanvas-header pe-2">
+            <h5 class="offcanvas-title fw-500" id="offcanvasRightLabel">Shopping Cart</h5>
+            <button type="button" class="btn-close cartDrowerBtnClose" data-bs-dismiss="offcanvas"
+                    aria-label="Close">
+                <span class="span1 animationLine"> </span>
+                <span class="span2 animationLine"> </span>
+            </button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="side-cart d-flex flex-column justify-content-between">
+                <div class="top">
+                    <div class="cartDrower mt-4">
+                        <div class="items pe-2 d-flex justify-content-between">
+                            <div class="left d-flex align-items-center">
+                                <a href="product-details.html"
+                                   class="thumb d-flex justify-content-between align-items-center">
+                                    <img src="assets/images/demo-1/product-1.png" alt="pictures">
+                                </a>
+                                <div class="text me-2">
+                                    <a href="product-details.html" class="d-block">
+                                        <h6 class="fw-500 hover-base">Snow Tire Real Wheels</h6>
+                                    </a>
+                                    <p class="productPrice font-14 mt-2">
+                                        1 X $35 = <span class="colorBlaack"> $35 </span>
+                                    </p>
+                                    <div class="qty">
+                                        <div class="qtySelector cartquantity me-3 mt-2">
+                                            <span class="decreaseQty radious5">
+                                                <i class="flaticon-minus-sign"></i>
+                                            </span>
+                                            <input type="text" class="qtyValue p-0 me-2 ms-2 radious5 text-center"
+                                                   value="1">
+                                            <span class="increaseQty radious5">
+                                                <i class="flaticon-plus"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="item-remove font-12"> <i class="flaticon-close"></i> </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="items pe-2 d-flex justify-content-between">
+                            <div class="left d-flex align-items-center">
+                                <a href="product-details.html"
+                                   class="thumb d-flex justify-content-between align-items-center">
+                                    <img src="assets/images/demo-1/product-2.png" alt="pictures">
+                                </a>
+                                <div class="text me-2">
+                                    <a href="product-details.html" class="d-block">
+                                        <h6 class="fw-500 hover-base">Suspension Audi G3</h6>
+                                    </a>
+                                    <p class="productPrice font-14 mt-2">
+                                        2 X $35 = <span class="colorBlaack"> $70 </span>
+                                    </p>
+                                    <div class="qty">
+                                        <div class="qtySelector cartquantity me-3 mt-2">
+                                            <span class="decreaseQty radious5">
+                                                <i class="flaticon-minus-sign"></i>
+                                            </span>
+                                            <input type="text" class="qtyValue p-0 me-2 ms-2 radious5 text-center"
+                                                   value="1">
+                                            <span class="increaseQty radious5">
+                                                <i class="flaticon-plus"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="item-remove font-12"> <i class="flaticon-close"></i> </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="items pe-2 d-flex justify-content-between">
+                            <div class="left d-flex align-items-center">
+                                <a href="product-details.html"
+                                   class="thumb d-flex justify-content-between align-items-center">
+                                    <img src="assets/images/demo-1/product-3.png" alt="pictures">
+                                </a>
+                                <div class="text me-2">
+                                    <a href="product-details.html" class="d-block">
+                                        <h6 class="fw-500 hover-base">Spyder Auto Projector</h6>
+                                    </a>
+                                    <p class="productPrice font-14 mt-2">
+                                        1 X $35 = <span class="colorBlaack"> $45 </span>
+                                    </p>
+                                    <div class="qty">
+                                        <div class="qtySelector cartquantity me-3 mt-2">
+                                            <span class="decreaseQty radious5">
+                                                <i class="flaticon-minus-sign"></i>
+                                            </span>
+                                            <input type="text" class="qtyValue p-0 me-2 ms-2 radious5 text-center"
+                                                   value="1">
+                                            <span class="increaseQty radious5">
+                                                <i class="flaticon-plus"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="item-remove font-12"> <i class="flaticon-close"></i> </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="items pe-2 d-flex justify-content-between">
+                            <div class="left d-flex align-items-center">
+                                <a href="product-details.html"
+                                   class="thumb d-flex justify-content-between align-items-center">
+                                    <img src="assets/images/demo-1/product-4.png" alt="pictures">
+                                </a>
+                                <div class="text me-2">
+                                    <a href="product-details.html" class="d-block">
+                                        <h6 class="fw-500 hover-base">Adjustable Seat Belt</h6>
+                                    </a>
+                                    <p class="productPrice font-14 mt-2">
+                                        1 X $70 = <span class="colorBlaack"> $70 </span>
+                                    </p>
+                                    <div class="qty">
+                                        <div class="qtySelector cartquantity me-3 mt-2">
+                                            <span class="decreaseQty radious5">
+                                                <i class="flaticon-minus-sign"></i>
+                                            </span>
+                                            <input type="text" class="qtyValue p-0 me-2 ms-2 radious5 text-center"
+                                                   value="1">
+                                            <span class="increaseQty radious5">
+                                                <i class="flaticon-plus"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="item-remove font-12"> <i class="flaticon-close"></i> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="total-ammount d-flex justify-content-between align-items-center">
+                        <h6 class="fw-600">Total:</h6>
+                        <h6 class="ammount fw-600">$850.00</h6>
+                    </div>
+                    <div class="button-box">
+                        <a href="cart.html" class="btn-base w-100"> View Your Cart</a>
+                        <a href="cart.html" class="btn-base blackBtn mt-3 w-100"> Go To Checkout </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Cart Drower End -->
+    <!-- Offcanvas Menu-Search Start -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight4" aria-labelledby="offcanvasRightLabel4">
+        <div class="offcanvas-header searchHead d-flex align-items-center">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel4">Search Products</h5>
+            <button type="button" class="btn-close p-0 animationCloser" data-bs-dismiss="offcanvas"
+                    aria-label="Close">
+                <span class="span1 animationLine"> </span>
+                <span class="span2 animationLine"> </span>
+            </button>
+        </div>
+        <div class="offcanvas-body overflow-hidden">
+            <div class="cartAction px-3 py-4">
+                <form class="form m-0 p-0">
+                    <div class="form-group">
+                        <input type="text" class="form-control ps-3" placeholder="Product Keyword..">
+                    </div>
+                    <div class="form-group mt-3">
+                        <select class="custom-select ps-3 pe-3">
+                            <option value="1" selected="">Choose Category</option>
+                            <option value="2"> Brake </option>
+                            <option value="3"> Engine </option>
+                            <option value="4"> Tire</option>
+                            <option value="5">Filter </option>
+                            <option value="5"> Suspension</option>
+                        </select>
+                    </div>
+                    <div class="form-group mt-3 mb-0">
+                        <button type="button" class="btn-base fw-400 radious0 w-100">Search Product</button>
+                    </div>
+                </form>
+                <div class="mt-3 pt-2">
+                    <h5 class="searchTitle">Hot Categories</h5>
+                    <div class="row justify-content-between">
+                        <div class="col-4 mt-3 d-flex justify-content-center">
+                            <div class="scatBox d-flex">
+                                <div class="scat text-center">
+                                    <a href="shop-grid-1.html" class="thumb">
+                                        <img src="assets/images/demo-1/product-1.png" alt="pictures">
+                                    </a>
+                                    <h6 class="mt-2 font-15"><a href="shop-grid-1.html">Brake</a></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 mt-3 d-flex justify-content-center">
+                            <div class="scatBox d-flex">
+                                <div class="scat text-center">
+                                    <a href="shop-grid-1.html" class="thumb">
+                                        <img src="assets/images/demo-1/product-2.png" alt="pictures">
+                                    </a>
+                                    <h6 class="mt-2 font-15"><a href="shop-grid-1.html">Engine</a></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 mt-3 d-flex justify-content-center">
+                            <div class="scatBox d-flex">
+                                <div class="scat text-center">
+                                    <a href="shop-grid-1.html" class="thumb">
+                                        <img src="assets/images/demo-1/product-3.png" alt="pictures">
+                                    </a>
+                                    <h6 class="mt-2 font-15"><a href="shop-grid-1.html">Tire</a></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 mt-3 d-flex justify-content-center">
+                            <div class="scatBox d-flex">
+                                <div class="scat text-center">
+                                    <a href="shop-grid-1.html" class="thumb">
+                                        <img src="assets/images/demo-1/product-6.png" alt="pictures">
+                                    </a>
+                                    <h6 class="mt-2 font-15"><a href="shop-grid-1.html">Engine</a></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 mt-3 d-flex justify-content-center">
+                            <div class="scatBox d-flex">
+                                <div class="scat text-center">
+                                    <a href="shop-grid-1.html" class="thumb">
+                                        <img src="assets/images/demo-1/product-5.png" alt="pictures">
+                                    </a>
+                                    <h6 class="mt-2 font-15"><a href="shop-grid-1.html">Suspension</a></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 mt-3 d-flex justify-content-center">
+                            <div class="scatBox d-flex">
+                                <div class="scat text-center">
+                                    <a href="shop-grid-1.html" class="thumb">
+                                        <img src="assets/images/demo-1/product-8.png" alt="pictures">
+                                    </a>
+                                    <h6 class="mt-2 font-15"><a href="shop-grid-1.html">Filter</a></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Offcanvas Menu-Search End -->
+    <!-- Mobile Nav Start -->
+    <div class="offcanvas offcanvas-start mobile-nav-wrapper" tabindex="-1" id="offcanvasmenu">
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close nev-cross text-reset" data-bs-dismiss="offcanvas"
+                    aria-label="Close">
+                <span class="font-18 fw-600 colorBlaack"> Close Menu</span>
+                <span class="font-12 me-2 mt-1"> <i class="flaticon-close"></i> </span>
+            </button>
+        </div>
+        <div class="offcanvas-body">
+            <nav>
+                <ul class="mobile-nav navbar-nav flex-column">
+                    <li class="dropdown-list nav-item p-0">
+                        <a href="#0" class="nav-link">
+                            <span>Home </span>
+                            <span class="mnav-plus-minus">
+                                <i class="flaticon-plus-1"></i>
+                                <i class="flaticon-minus-sign"></i>
+                            </span>
+                        </a>
+                        <ul class="dropdown">
+                            <li> <a class="dropdown-item" href="index.html">Home 01</a> </li>
+                            <li> <a class="dropdown-item" href="index-2.html">Home 02</a> </li>
+                            <li> <a class="dropdown-item" href="index-3.html">Home 03</a> </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-list nav-item p-0">
+                        <a href="#0" class="nav-link">
+                            <span>Shop </span>
+                            <span class="mnav-plus-minus">
+                                <i class="flaticon-plus-1"></i>
+                                <i class="flaticon-minus-sign"></i>
+                            </span>
+                        </a>
+                        <ul class="dropdown">
+                            <li> <a class="dropdown-item" href="shop-list.html">Shop List</a> </li>
+                            <li> <a class="dropdown-item" href="shop-grid-1.html">Shop Grid 01</a> </li>
+                            <li> <a class="dropdown-item" href="shop-grid-2.html">Shop Grid 02</a> </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-list nav-item p-0">
+                        <a href="#0" class="nav-link">
+                            <span>Single Product </span>
+                            <span class="mnav-plus-minus">
+                                <i class="flaticon-plus-1"></i>
+                                <i class="flaticon-minus-sign"></i>
+                            </span>
+                        </a>
+                        <ul class="dropdown">
+                            <li> <a class="dropdown-item" href="product-details.html">Shop Details 01</a> </li>
+                            <li> <a class="dropdown-item" href="product-details-2.html">Shop Details 02</a> </li>
+                            <li> <a class="dropdown-item" href="product-details-3.html">Shop Details 03</a> </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-list nav-item p-0">
+                        <a href="#0" class="nav-link">
+                            <span>Pages</span>
+                            <span class="mnav-plus-minus">
+                                <i class="flaticon-plus-1"></i>
+                                <i class="flaticon-minus-sign"></i>
+                            </span>
+                        </a>
+                        <ul class="dropdown">
+                            <li> <a class="dropdown-item" href="login.html">Login </a> </li>
+                            <li> <a class="dropdown-item" href="register.html">Registration </a> </li>
+                            <li> <a class="dropdown-item" href="about.html">About </a> </li>
+                            <li> <a class="dropdown-item" href="cart.html">Cart </a> </li>
+                            <li> <a class="dropdown-item" href="checkout.html">Checkout</a> </li>
+                            <li> <a class="dropdown-item" href="compare.html">Compare</a> </li>
+                            <li> <a class="dropdown-item" href="error.html">Error</a> </li>
+                            <li> <a class="dropdown-item" href="faq.html">Faq </a> </li>
+                            <li> <a class="dropdown-item" href="wishlist.html">Wishlist</a> </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-list nav-item p-0">
+                        <a href="#0" class="nav-link">
+                            <span>Blog</span>
+                            <span class="mnav-plus-minus">
+                                <i class="flaticon-plus-1"></i>
+                                <i class="flaticon-minus-sign"></i>
+                            </span>
+                        </a>
+                        <ul class="dropdown">
+                            <li> <a class="dropdown-item" href="blog.html">Blog 01 </a> </li>
+                            <li> <a class="dropdown-item" href="blog-2.html">Blog 02 </a> </li>
+                            <li> <a class="dropdown-item" href="blog-details.html">Blog Details </a> </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item p-0"><a class="nav-link bb-0" href="contact.html">Contact </a></li>
+                </ul>
+            </nav>
+            <ul class="mobile-contact-info">
+                <li class="single-minfo">
+                    <a href="contact.html"><i class="flaticon-location-1"></i>Our location</a>
+                </li>
+                <li class="single-minfo">
+                    <a href="login.html"><i class="flaticon-account"></i>Log In / Sign Up</a>
+                </li>
+                <li class="single-minfo">
+                    <a href="tel:+1234567890"><i class="flaticon-phone-call"></i>(+01) - 2345 - 6789</a>
+                </li>
+            </ul>
+            <div class="mobile-media">
+                <h6 class="mb-15">Follow Us</h6>
+                <ul class="social mt-3 d-flex align-items-center">
+                    <li>
+                        <a href="https://www.facebook.com/" target="_blank" class="hover-base font-16 me-3">
+                            <i class="flaticon-facebook-app-symbol"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://youtube.com/" target="_blank" class="hover-base font-14 me-3">
+                            <i class="flaticon-youtube"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.twitter.com/" target="_blank" class="hover-base font-14 me-3">
+                            <i class="flaticon-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/" target="_blank" class="hover-base font-14">
+                            <i class="flaticon-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <p class="site-copyright pt-0">
+                Copyright 2022 &copy; <a href="index.html">Nipom</a>.
+                All rights reserved. Powered by <a href="Http://www.bootstrapmb.com">bootstrapMB</a>.
+            </p>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+    {
+
+    
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js" integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="~/front/js/gpu-comparison.js"></script>
+
+
+
+
+
+
+
+}

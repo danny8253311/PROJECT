@@ -1,0 +1,66 @@
+﻿@page
+@model Email_frontModel
+@{
+    ViewData["Title"] = "Manage Email";
+    ViewData["ActivePage"] = ManageNavPages.Email;
+    Layout = "/Views/Shared/_Layout_front.cshtml";
+}
+
+
+@section Styles{
+    <style>
+        #test11{
+            background-image: url("/images/back.png");
+            padding-bottom:-1rem
+        }
+        
+    </style>
+    
+}
+
+<div id="test11" class="rounded bg-white" style="padding-left:33%; padding-top:10%;padding-bottom:10%">
+   <div class="row">
+       
+        <div class="col-md-6" style="border-radius:30px;box-shadow:0px 0px 25px gray;padding-top:50px;padding-bottom:150px;background:#060144;">
+            <h3 style="text-align:center;padding-bottom:10%;color:white">信箱變更</h3>
+        <form id="email-form" method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            @if (Model.IsEmailConfirmed)
+            {
+                <div class="form-floating input-group">
+                    <input asp-for="Email" class="form-control" disabled />
+                        <div class="input-group-append">
+                            <span class="h-100 input-group-text text-success font-weight-bold">✓</span>
+                        </div>
+                    <label asp-for="Email" class="form-label"></label>
+                </div>
+            }
+            else
+            {
+                <div class="form-floating">
+                    <input asp-for="Email" class="form-control" disabled />
+                    <label asp-for="Email" class="form-label"></label>
+                    <button id="email-verification" type="submit" asp-page-handler="SendVerificationEmail" class="btn btn-link">Send verification email</button>
+                </div>
+            }
+            <div class="form-floating">
+                <input asp-for="Input.NewEmail" class="form-control" autocomplete="email" aria-required="true" style="margin-top:5%" />
+                <label asp-for="Input.NewEmail" class="form-label"></label>
+                <span asp-validation-for="Input.NewEmail" class="text-danger"></span>
+            </div>
+            <div>
+                    <button data-bs-toggle="modal" data-bs-target="#exampleModal" id="change-email-button" type="submit" asp-page-handler="ChangeEmail" class="w-50 btn btn-lg" style="color:white;background:linear-gradient(to top left,#0369a6,#008997);margin-left:24%;margin-top:5%">Change email</button>
+                    <partial name="_StatusMessage_front" for="StatusMessage" />
+            </div>
+                
+                
+        </form>         
+    </div>
+</div>
+        </div>
+
+        
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,250 @@
+﻿
+@section Styles{
+    <link rel="icon" href="~/thriftfiles/images/bg/sm-logo.png" type="image/gif" sizes="20x20">
+    <link rel="stylesheet" href="~/thriftfiles/css/animate.css">
+    <link rel="stylesheet" href="~/thriftfiles/css/all.css">
+    <link rel="stylesheet" href="~/thriftfiles/css/boxicons.min.css">
+    <link rel="stylesheet" href="~/thriftfiles/css/bootstrap-icons.css">
+    @*<link rel="stylesheet" href="~/thriftfiles/css/jquery-ui.css">*@
+    <link rel="stylesheet" href="~/thriftfiles/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="~/thriftfiles/css/slick-theme.css">
+    <link rel="stylesheet" href="~/thriftfiles/css/slick.css">
+    <link rel="stylesheet" href="~/thriftfiles/css/nice-select.css">
+    <link rel="stylesheet" href="~/thriftfiles/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/thriftfiles/css/odometer.css">
+    <link rel="stylesheet" href="~/thriftfiles/css/style.css">
+}
+
+<div class="inner-banner">
+    <div class="container mt-120">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a class="nav-link hover-base text-capitalize" asp-area="FrontThrift" asp-controller="FrontThrift" asp-action="index">Home</a></li>
+                <li class="breadcrumb-item active"></li>
+                    <a class="nav-link hover-base text-capitalize" style="color:white" asp-area="FrontThrift" asp-controller="FrontThrift" asp-action="Products">Products</a>
+            </ol>
+        </nav>
+    </div>
+</div>
+<div class="live-auction-section pt-120 pb-120" id="app">
+    <img alt="image" src="~/thriftfiles/images/bg/section-bg.png" class="img-fluid section-bg-top">
+    
+    <div class="container">
+        <div class="row gy-4 mb-60 d-flex justify-content-center">
+            <div class="col-lg-4 col-md-6 col-sm-10 " v-for="item in ThriftProductsDTO">
+                <div data-wow-duration="1.5s" data-wow-delay="0.2s" class="eg-card auction-card1 wow fadeInDown">
+                    <div class="auction-img">
+                        <img alt="image" src="~/thriftfiles/images/bg/live-auc1.png">
+                        
+                        <div class="author-area">
+                            <div class="author-emo">
+                                <img alt="image" src="~/thriftfiles/images/icons/smile-emo.svg">
+                            </div>
+                            <div class="author-name">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="auction-content">
+                        <h4><a href="#" @@click="gotodetail(item.thriftProductId)">{{ item.thriftProductName }}</a></h4>
+                        <p>定價 : <span>NT${{item.thriftProductUnitPrice}}</span></p>
+                        <div class="auction-card-bttm">
+                            <a :id="item.thriftProductId" href="#" class="eg-btn btn--primary btn--sm" @@click="addcart(item.thriftProductId)">加入購物車</a>
+                            <div class="share-area">
+                                <ul class="social-icons d-flex">
+                                    <li><a href="https://www.facebook.com/"><i class="bx bxl-facebook"></i></a></li>
+                                    <li><a href="https://www.twitter.com/"><i class="bx bxl-twitter"></i></a></li>
+                                    <li><a href="https://www.pinterest.com/"><i class="bx bxl-pinterest"></i></a></li>
+                                    <li><a href="https://www.instagram.com/"><i class="bx bxl-instagram"></i></a></li>
+                                </ul>
+                                <div>
+                                    <a href="#" class="share-btn"><i class='bx bxs-share-alt'></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Quick View End -->
+        <!-- Cart Drower Start -->
+        <div class="offcanvas cartDrowerOffcanvus offcanvas-end" tabindex="-1" id="offcanvasRight">
+            <div class="offcanvas-header pe-2">
+                <h5 class="offcanvas-title fw-500" id="offcanvasRightLabel">Shopping Cart</h5>
+                <button type="button" class="btn-close cartDrowerBtnClose" data-bs-dismiss="offcanvas"
+                        aria-label="Close">
+                    <span class="span1 animationLine"> </span>
+                    <span class="span2 animationLine"> </span>
+                </button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="side-cart d-flex flex-column justify-content-between">
+                    <div class="top">
+                        <div class="cartDrower mt-4">
+                            <div v-for="item in shoppoingitem" class="items pe-2 d-flex justify-content-between">
+                                <div class="left d-flex align-items-center">
+                                    <a href="product-details.html"
+                                       class="thumb d-flex justify-content-between align-items-center">
+                                        <img :src="item.productPic" alt="pictures">
+                                    </a>
+                                    <div class="text me-2">
+                                        <a href="product-details.html" class="d-block">
+                                            <h6 class="fw-500 hover-base">{{item.productId}}</h6>
+                                        </a>
+                                        <p class="productPrice font-14 mt-2">
+                                            <span>{{item.productQty}}</span> X <span>{{item.productUnitPrice}}</span> = <span class="colorBlaack">{{item.countprice}}</span>
+                                        </p>
+                                        <div class="qty">
+                                            <div class="qtySelector cartquantity me-3 mt-2">
+                                                <span class="decreaseQty radious5" @@click="amountdecrease(item.productId)">
+                                                    <i class="flaticon-minus-sign"></i>
+                                                </span>
+                                                <input :data-id="item.productId" type="text" class="qtyValue p-0 me-2 ms-2 radious5 text-center"
+                                                       :value="item.productQty" @@change="amountchange(item.productId)">
+                                                <span @@click="amountincrease(item.productId)" class="increaseQty radious5">
+                                                    <i class="flaticon-plus"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <div class="item-remove font-12"> <i class="flaticon-close"></i> </div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="total-ammount d-flex justify-content-between align-items-center">
+                            <h6 class="fw-600">Total:</h6>
+                            <h6 class="ammount fw-600">{{sum}}</h6>
+                        </div>
+                        <div class="button-box">
+                            <a href="cart.html" class="btn-base w-100"> View Your Cart</a>
+                            <a href="cart.html" class="btn-base blackBtn mt-3 w-100"> Go To Checkout </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Cart Drower End -->
+        <!-- Offcanvas Menu-Search Start -->
+        <div class="row">
+            <nav class="pagination-wrap">
+                <ul class="pagination d-flex justify-content-center gap-md-3 gap-2">
+                    <li class="page-item">
+                        <a class="page-link" href="#" tabindex="-1">Prev</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">01</a></li>
+                    <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="#">02</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">03</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+    
+@section Scripts{
+    
+    
+    @*<script src="~/thriftfiles/js/jquery-3.6.0.min.js"></script>*@
+    @*<script src="~/thriftfiles/js/jquery-ui.js"></script>*@
+    <script src="~/thriftfiles/js/bootstrap.bundle.min.js"></script>
+   @* <script src="~/thriftfiles/js/wow.min.js"></script>*@
+@*    <script src="~/thriftfiles/js/swiper-bundle.min.js"></script>*@
+    @*<script src="~/thriftfiles/js/slick.js"></script>*@
+    @*<script src="~/thriftfiles/js/jquery.nice-select.js"></script>*@
+ @*   <script src="~/thriftfiles/js/odometer.min.js"></script>*@
+    @*<script src="~/thriftfiles/js/viewport.jquery.js"></script>*@
+    @*<script src="~/thriftfiles/js/jquery.magnific-popup.min.js"></script>*@
+    @*<script src="~/thriftfiles/js/main.js"></script>*@
+    
+    <script src="~/vue/vue.global.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js" integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        //var baseAddress = "http://172.18.102.115/WebSite";
+        var baseAddress = "https://localhost:7117";
+        const test = {
+            data() {
+                return {
+                    ThriftProductsDTO: [],
+                    shoppoingitem: [],
+                };
+            },
+            mounted: function () {
+                let _this = this;
+                this.getThriftProducts();
+            },
+            methods: {
+                getThriftProducts: function () {
+                    let _this = this;
+                    axios.get(`${baseAddress}/api/ShowThriftProducts`).then(response => {
+                        //alert(JSON.stringify(response.data));
+                        this.ThriftProductsDTO = response.data;
+                        var ThriftProductsList = [];
+                        for (var i = 0; i < this.ThriftProductsDTO.length; i++) {
+                            var item = this.ThriftProductsDTO[i];
+                            //item.Edit = false;
+                            ThriftProductsList.push(item);
+                        }
+                        this.ThriftProductsDTO = ThriftProductsList;
+                        this.showthriftShoppingCart();
+                    });
+                },
+                gotodetail: function (thriftProductId) {
+                    window.location.href = `${baseAddress}/FrontThrift/FrontThrift/Detail/?id=${thriftProductId}`;
+                },
+                addcart: function (thriftProductId) {
+                    let _this = this;
+                    var isadd = Boolean($(`#${thriftProductId}`).text());
+                    var thriftProductUnitPrice = $(`#${thriftProductId}`).parent().prev().children().text().slice(3);
+                    //alert($(`#${thriftProductUnitPrice}`).text().slice(3));
+                    var thriftshoppingCart = {};
+                    thriftshoppingCart.thriftProductId = thriftProductId;
+                    thriftshoppingCart.customerId = $('#customerid').text();
+                    thriftshoppingCart.thriftProductUnitPrice = thriftProductUnitPrice;
+                    if (!isadd) {
+                        thriftshoppingCart.qty = 1;
+                        axios.post(`${baseAddress}/api/ShowThriftProducts`, thriftshoppingCart).then(response => {
+                            alert(response.data);
+                            this.showthriftShoppingCart();
+                            console.log("321");
+                        });
+                    }
+                    //else {
+                    //    axios.get(`${baseAddress}/api/ShowThriftProducts/cart/${thriftshoppingCart.customerId}/${thriftProductId}`).then(response => {
+                    //        thriftshoppingCart.qty = response.data[0].ThriftProductQty + 1;
+                    //        axios.put(`${baseAddress}/api/ShowThriftProducts/cart/${thriftshoppingCart.customerId}/${thriftProductId}/${thriftshoppingCart.qty}`).then(response => {
+                    //            alert(response.data)
+                    //            this.showthriftShoppingCart()
+                    //        })
+                    //        console.log("000123");
+                    //    })
+                    //}
+                },
+                showthriftShoppingCart: function () {
+                    axios.get(`${this.baseAddress}/api/ShowThriftProducts/cart/${$('#customerid').text()}`).then(response => {
+                        alert(response.data.length);
+                        var newresponse = response.data;
+                        for (var i = 0; i < response.data.length; i++) {
+                            newresponse[i].countprice = response.data[i].productUnitPrice * response.data[i].productQty;
+                            newresponse[i].productPic = `./images/ShowThriftProducts/${this.ProductDTOes[i].productPic}.jpg`;
+                        };
+                        this.shoppoingitem = newresponse;
+                    }).then(reponse => {
+                        this.total();
+                    })
+                },
+            },
+        };
+        const app = Vue.createApp(test).mount("#app");
+    </script>
+}

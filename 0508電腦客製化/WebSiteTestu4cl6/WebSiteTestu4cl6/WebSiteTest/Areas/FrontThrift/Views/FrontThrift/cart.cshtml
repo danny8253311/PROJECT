@@ -1,0 +1,338 @@
+﻿@section Styles{
+    <link rel="icon" href="~/thriftfiles/images/bg/sm-logo.png" type="image/gif" sizes="20x20">
+    <link rel="stylesheet" href="~/thriftfiles/css/animate.css">
+    <link rel="stylesheet" href="~/thriftfiles/css/all.css">
+    <link rel="stylesheet" href="~/thriftfiles/css/boxicons.min.css">
+    <link rel="stylesheet" href="~/thriftfiles/css/bootstrap-icons.css">
+                        @*<link rel="stylesheet" href="~/thriftfiles/css/jquery-ui.css">*@
+    <link rel="stylesheet" href="~/thriftfiles/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="~/thriftfiles/css/slick-theme.css">
+    <link rel="stylesheet" href="~/thriftfiles/css/slick.css">
+    <link rel="stylesheet" href="~/thriftfiles/css/nice-select.css">
+    <link rel="stylesheet" href="~/thriftfiles/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/thriftfiles/css/odometer.css">
+    <link rel="stylesheet" href="~/thriftfiles/css/style.css">
+}
+
+<section id="app" class="cart-area pt-120 pb-60">
+    <div class="container" >
+        <div class="row  ">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div class="cart-table-box  ">
+                    <div class="table-outer">
+                        <table class="cart-table">
+                            <thead class="cart-header">
+                                <tr>
+                                    <th class="">Products</th>
+                                    <th>ThriftProductName</th>
+                                    <th class="price">Price</th>
+                                    <th>Quantity</th>
+                                    <th>Subtotal</th>
+                                    <th>Remove</th>
+                                </tr>
+                            </thead>
+                            <tbody v-for="item in shoppoingitem">
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <a href="#0" class="thumb">
+                                                <img src="assets/images/demo-1/product-11.png" alt="pictures">
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="thumb-box">
+                                            <h6 class=" fw-500" >{{item.thriftProductName}} </h6>
+                                        </div>
+                                    </td>
+                                    <td :id="item.thriftProductId">NT${{item.thriftProductUnitPrice}}</td>
+                                    <td class="qty">
+                                        <div class="qtySelector tablePlusMinus me-3 mt-2">
+                                            <span class="decreaseQty radious5" @@click="addQty()">
+                                                <i class="flaticon-minus-sign"></i>
+                                            </span>
+                                            <input type="text"
+                                                   class="qtyValue p-0 me-2 ms-2 radious5 text-center"
+                                                   value="1" id="qtyInput" @*v-model="shoppoingitem[0].newQty"*@>
+                                            <span class="increaseQty radious5" @@click="addQty()">
+                                                <i class="flaticon-plus-1"></i>
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td class="sub-total">$65.00</td>
+                                    <td>
+                                        <div class="remove colorBage1">
+                                            <i class="flaticon-close"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 mt-4">
+                <div class="apply-coupon d-flex align-items-center flex-wrap  ">
+                    <div class="apply-coupon-input-box mt-3">
+                        <input type="text" name="coupon-code" placeholder="Coupon Code">
+                    </div>
+                    <div class="apply-coupon-button mt-3">
+                        <button class="btn-base h52 style2" type="submit">Apply Coupon</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mt-4 text-lg-end">
+                <div class="cart-button-box-right  ">
+                    <button class="btn-base mt-3" style="margin-right: 30px;" type="submit">Continue Shopping</button>
+                    <button class="btn-base mt-3" type="submit">Update Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="row margintop--5 pt-120">
+            <div class="col-xl-6 col-lg-7  ">
+                <div class="inner-title">
+                    <h2>Cart Totals</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-6 col-lg-7  ">
+                <div class="cart-total-box mt-30">
+                    <div class="table-outer">
+                        <table class="cart-table2">
+                            <thead class="cart-header clearfix">
+                                <tr>
+                                    <th colspan="1" class="shipping-title ">Shipping</th>
+                                    <th class="price ">$2500.00</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="shipping "> Shipping </td>
+                                    <td class="selact-box1">
+                                        <ul class="shop-select-option-box-1">
+                                            <li>
+                                                <input type="checkbox" name="free_shipping" id="option_1" checked="">
+                                                <label for="option_1">
+                                                    <span></span>
+                                                    Free Shipping
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="flat_rate" id="option_2">
+                                                <label for="option_2"><span></span>Flat Rate</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="local_pickup" id="option_3">
+                                                <label for="option_3"><span></span>Local Pickup</label>
+                                            </li>
+                                        </ul>
+                                        <div class="inner-text ">
+                                            <p>Shipping options will be updated during checkout</p>
+                                        </div>
+                                        <h4 class="">Calculate Shipping</h4>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h4 class="total ">Total</h4>
+                                    </td>
+                                    <td class="subtotal">$2500.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-5  ">
+                <div class="cart-check-out mt-30">
+                    <h4 class=" font-24">Check Out</h4>
+                    <ul class="cart-check-out-list ">
+                        <li>
+                            <div class="left">
+                                <p>Subtotal</p>
+                            </div>
+                            <div class="right">
+                                <p>$2500.00</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="left">
+                                <p>Shipping</p>
+                            </div>
+                            <div class="right">
+                                <p><span>Flat rate:</span> $50.00</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="left">
+                                <p>Total Price:</p>
+                            </div>
+                            <div class="right">
+                                <p>$2550.00</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts{
+
+    <script src="~/thriftfiles/js/bootstrap.bundle.min.js"></script>
+    <script src="~/vue/vue.global.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js" integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        const test = {
+            data() {
+                return {
+                    ThriftProductsDTO: [],
+                    //thriftProductId:null,
+                    baseAddress: '',
+                    shoppoingitem: [],
+                    sum: 0,
+                    newQty: 0,
+                    cartItemExists: false,
+                    thriftshoppingCartQty: 0,
+                };
+            },
+            mounted() {
+                let _this = this;
+                //var urlParams = new URLSearchParams(window.location.search);
+                //this.thriftProductId = urlParams.get('id');
+                //this.baseAddress = "http://172.18.102.115/WebSite";
+                this.baseAddress = "https://localhost:7117";
+                this.getThriftProducts();
+                this.showthriftShoppingCart();
+                //this.shoppoingitem[0].newQty = this.newQty;
+            },
+            methods: {
+                getThriftProducts: function (thriftProductId) {
+                    console.log("id:", thriftProductId);
+                    let _this = this;
+                    let arrayDTO = [];
+                    axios.get(`${this.baseAddress}/api/ShowThriftProducts/${this.thriftProductId}`).then(response => {
+                        console.log("getproducts");
+                        console.log(response);
+                        arrayDTO.push(response.data)
+                        _this.ThriftProductsDTO = arrayDTO;
+                        this.showthriftShoppingCart();
+                    }).then(response => { this.addQty(); }).catch(error => {
+                        console.log("Error fetching data:", error); // Add this line for debugging
+                    });
+                },
+                addQty: function () {
+                    //console.log($(".increaseQty"))
+                    
+                    if ($(".increaseQty").length) {
+                        var minVal = 1,
+                            maxVal = 20;
+                        $(".increaseQty").on("click", function () {
+                            var parentElm = $(this).parents(".qtySelector");
+                            $(this).addClass("clicked");
+                            setTimeout(function () {
+                                $(".clicked").removeClass("clicked");
+                            }, 100);
+                            var value = parentElm.find(".qtyValue").val();
+                            if (value < maxVal) {
+                                value++;
+                            }
+                            parentElm.find(".qtyValue").val(value);
+                        });
+                    };
+
+                    if ($(".decreaseQty").length) {
+                        $(".decreaseQty").on("click", function () {
+                            var parentElm = $(this).parents(".qtySelector");
+                            $(this).addClass("clicked");
+                            setTimeout(function () {
+                                $(".clicked").removeClass("clicked");
+                            }, 100);
+                            var value = parentElm.find(".qtyValue").val();
+                            if (value > 1) {
+                                value--;
+                            }
+                            parentElm.find(".qtyValue").val(value);
+                        });
+                    };
+                },
+
+                //addcart: function (thriftProductId) {
+                //    let _this = this;
+                //    var thriftProductUnitPrice = $(`#${thriftProductId}`).text().slice(3);
+                //    //var thriftProductName = $(`#${thriftProductId}`).prev().children().children().text();
+                //    var thriftProductName = $(`#${thriftProductId}`).prev().find('.product-name').text();
+                //    var thriftshoppingCart = {};
+                //    thriftshoppingCart.thriftProductId = thriftProductId;
+                //    thriftshoppingCart.customerId = '101';
+                //    thriftshoppingCart.thriftProductUnitPrice = thriftProductUnitPrice;
+                //    thriftshoppingCart.thriftProductName = thriftProductName;
+
+                //    // 獲取增加數量值
+                //    var value = parseInt($(".qtyValue").val());
+
+                //    axios.get(`${this.baseAddress}/api/ShowThriftProducts/cart/101/${thriftProductId}`).then(response => {
+                //        if (response.data && response.data.length > 0) {
+                //            var existingCartItem = response.data[0];
+                //            var currentQty = existingCartItem.thriftProductQty;
+                //            var newQty = currentQty + (value || 1); // 将数量值加到当前数量上，如果没有获取到有效值，则默认为1
+                //            existingCartItem.thriftProductQty = newQty;
+                //            console.log("資料表數量:");
+                //            console.log(newQty)
+                //            console.log("增加數量:");
+                //            console.log(value)
+                //            axios.put(`${this.baseAddress}/api/ShowThriftProducts/cart/101/${thriftProductId}/${newQty}`).then(response => {
+                //                alert(response.data);
+                //                this.showthriftShoppingCart();
+                //            });
+                //        } else {
+                //            // 商品未加入购物车
+                //            thriftshoppingCart.qty = value || 1; // 将数量值赋给thriftshoppingCart.qty，如果没有获取到有效值，则默认为1
+                //            axios.post(`${this.baseAddress}/api/ShowThriftProducts`, thriftshoppingCart).then(response => {
+                //                alert(response.data);
+                //                this.showthriftShoppingCart();
+                //            });
+                //        }
+                //    }).catch(error => {
+                //        console.log("未加入購物車");
+                //    });
+                //    this.getThriftProducts(thriftProductId);
+                //},
+                updateQty: function (value) {
+                    $("#qtyInput").val(value);
+                },
+                showthriftShoppingCart: function () {
+                    let _this = this;
+                    axios.get(`${this.baseAddress}/api/ShowThriftProducts/cart/101`).then(response => {
+                        //alert(response.data.length);
+                        var newresponse = response.data;
+                        console.log("response.data=>", response.data);
+                        for (var i = 0; i < response.data.length; i++) {
+                            newresponse[i].countprice = response.data[i].thriftProductUnitPrice* response.data[i].productQty;
+                            //newresponse[i].productPic = `./images/ShowThriftProducts/${this.ProductDTOes[i].productPic}.jpg`;
+                        };
+                        this.shoppoingitem = newresponse;
+                        console.log("shop:....")
+                        console.log(this.shoppoingitem);
+                        //this.updateQty(this.shoppoingitem[0].newQty);
+                        this.updateQty(value);
+                    }).then(reponse => {
+                        this.total();
+                    })
+                },
+                total: function () {
+                    this.sum = 0;
+                    for (var i = 0; i < this.shoppoingitem.length; i++) {
+                        this.sum += this.shoppoingitem[i].countprice
+                    }
+
+                },
+            },
+        };
+        const app = Vue.createApp(test).mount("#app");
+    </script>
+}

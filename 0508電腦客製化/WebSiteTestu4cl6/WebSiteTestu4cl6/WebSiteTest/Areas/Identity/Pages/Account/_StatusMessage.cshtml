@@ -1,0 +1,9 @@
+﻿@model string
+
+@if (!String.IsNullOrEmpty(Model))
+{
+    var statusMessageClass = Model.StartsWith("Error") ? "失敗" : "成功";
+    <div class="alert alert-@statusMessageClass alert-dismissible" role="alert">
+        @Model
+    </div>
+}

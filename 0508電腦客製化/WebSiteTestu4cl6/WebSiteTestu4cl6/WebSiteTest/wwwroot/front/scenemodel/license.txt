@@ -1,0 +1,11 @@
+Model Information:
+* title:	Wooden Computer Desk
+* source:	https://sketchfab.com/3d-models/wooden-computer-desk-7ae65baca1ed448a885a40dcfa7ab1d0
+* author:	Aaden (https://sketchfab.com/aadenhelan)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Wooden Computer Desk" (https://sketchfab.com/3d-models/wooden-computer-desk-7ae65baca1ed448a885a40dcfa7ab1d0) by Aaden (https://sketchfab.com/aadenhelan) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

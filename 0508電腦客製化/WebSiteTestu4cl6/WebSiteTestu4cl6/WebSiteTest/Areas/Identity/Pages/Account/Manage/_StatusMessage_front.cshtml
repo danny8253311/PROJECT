@@ -1,0 +1,20 @@
+﻿@model string
+@{
+    //Layout = "/Views/Shared/_Layout_front.cshtml";
+    //Layout = "/Areas/Identity/Pages/Account/Manage/_Layout_front.cshtml";
+
+}
+
+
+@section Styles{
+
+
+}
+
+@if (!String.IsNullOrEmpty(Model))
+{
+    var statusMessageClass = Model.StartsWith("Error") ? "失敗" : "成功";
+    <div class="alert alert-@statusMessageClass alert-dismissible" role="alert">
+        <span class="status-message" style="font-size:30px;color:#FFBB77;">@Model</span>
+    </div>
+}

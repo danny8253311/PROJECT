@@ -1,0 +1,17 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ChatGPT_My
+build_property.RootNamespace = ChatGPT_My
+build_property.ProjectDir = C:\Users\iSpan\Downloads\0522電腦客製化\0508電腦客製化\0508電腦客製化\0508電腦客製化\0508電腦客製化\WebSiteTestu4cl6\WebSiteTestu4cl6\ChatGPT_My\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\iSpan\Downloads\0522電腦客製化\0508電腦客製化\0508電腦客製化\0508電腦客製化\0508電腦客製化\WebSiteTestu4cl6\WebSiteTestu4cl6\ChatGPT_My
+build_property._RazorSourceGeneratorDebug = 

@@ -1,0 +1,244 @@
+﻿@page
+@model Register_frontModel
+@{
+    ViewData["Title"] = "Register";
+    Layout = null;
+}
+
+<link href="~/assets/front/login.css" rel="stylesheet" />
+<link href="~/assets/front/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+<style>
+
+    ::selection {
+        background: #ffc8ff;
+    }
+
+    body {
+        background-size: cover;
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+    }
+
+    input {
+        display: block;
+        width: 100%;
+        font-size: 14pt;
+        line-height: 28pt;
+        font-family: "Fjalla One";
+        margin-bottom: 15pt;
+        border: none;
+        border-bottom: 5px solid black;
+        background: #f8f4e5;
+        min-width: 250px;
+        padding-left: 5px;
+        outline: none;
+        color: black;
+    }
+
+        input:focus {
+            border-bottom: 5px solid #ffa580;
+        }
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus {
+            border-bottom: 5px solid #95a4ff;
+            -webkit-text-fill-color: #2A293E;
+            -webkit-box-shadow: 0 0 0px 1000px #f8f4e5 inset;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+
+    #button {
+        /*display: block;*/
+        margin-right: 15%;
+        line-height: 28pt;
+        padding: 0 20px;
+        background: azure;
+        letter-spacing: 2px;
+        transition: 0.2s all ease-in-out;
+        outline: none;
+        border: 1px solid black;
+        box-shadow: 3px 3px 1px 1px #95a4ff, 3px 3px 1px 2px black;
+    }
+
+        #button:hover {
+            background: lightblue;
+            color: white;
+            border: 1px solid black;
+        }
+        input{
+            width:50px
+        }
+        i{
+        color: #FFD2D2
+        }
+ 
+        label{
+        color: #84C1FF
+        }
+
+    body {
+        background-image: url("/images/background-sign.png")
+    }
+    #maleRadio {
+        min-width:30px;
+        margin-bottom:5px;
+    }
+
+    #femaleRadio{
+    min-width:30px;
+        margin-bottom: 5px;
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+        background-color: white;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 50%;
+    }
+</style>
+<h1>@ViewData["Title"]</h1>
+
+
+<div id="bg">
+    <canvas></canvas>
+    <canvas></canvas>
+    <canvas></canvas>
+</div>
+
+<div class="register">
+    <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+        <input type="hidden" name="enews" value="register">
+        <input name="groupid" type="hidden" id="groupid" value="1">
+        <input name="tobind" type="hidden" id="tobind" value="0">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="contact-us">
+            <label><i class="fa fa-user"></i>用户名稱</label>
+            <input asp-for="Input.UserName"  autocomplete="username" aria-required="true" />     
+            <span asp-validation-for="Input.UserName" class="text-danger"></span>
+        </div>
+        <div class="contact-us">
+            <label><i class="fa fa-lock"></i>密碼</label>
+            <input asp-for="Input.Password"  autocomplete="new-password" aria-required="true" />
+            <span asp-validation-for="Input.Password" class="text-danger"></span>
+        </div>
+        <div class="contact-us">
+            <label><i class="fa fa-lock"></i>確認密碼</label>
+            <input asp-for="Input.ConfirmPassword"  autocomplete="new-password" aria-required="true" />
+            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+        </div>
+        <div class="contact-us">
+            <label><i class="fa-solid fa-person"></i>姓名</label>
+            <input asp-for="Input.Name" aria-required="true" />
+            <span asp-validation-for="Input.Name" class="text-danger"></span>
+        </div>
+        <div class="contact-us">
+            <label><i class="fa-solid fa-phone"></i>手機號碼</label>
+            <input asp-for="Input.PhoneNumber" autocomplete="PhoneNumber" aria-required="true" />
+            <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+        </div>
+        <div class="contact-us">
+            <label><i class="fa fa-envelope"></i>電子信箱</label>
+            <input asp-for="Input.Email"  autocomplete="Email" aria-required="true" />
+            <span asp-validation-for="Input.Email" class="text-danger"></span>
+        </div>
+        <div class="contact-us">
+            <label><i class="fa-solid fa-location-dot"></i>地址</label>
+            <input asp-for="Input.Address" autocomplete="address" aria-required="true" />
+            <span asp-validation-for="Input.Address" class="text-danger"></span>
+        </div>
+        <label><i class="fa-solid fa-genderless"></i>性别</label><br>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <label for="maleRadio">男</label>
+            <input type="radio" name="Input.Gender" id="maleRadio" value="男" style="vertical-align: middle;">
+        </div>
+
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <label for="femaleRadio">女</label>
+            <input type="radio" name="Input.Gender" id="femaleRadio" value="女" style="vertical-align: middle;">
+        </div>
+
+
+
+        <div class="contact-us">
+            <label><i class="fa-solid fa-cake-candles"></i>生日</label>
+            <input type="text" id="datepicker" asp-for="Input.Birth"  autocomplete="birthday" aria-required="true" />
+            <span asp-validation-for="Input.Birth" class="text-danger"></span>
+        </div>
+            @* <span asp-validation-for="Input.Password" class="text-danger"></span>*@
+            <div class="text-center">
+                <a href="../Account/Register_front">
+                <input  id="button" class="btn btn-default" type="submit" name="button" value="註冊">
+                </a>
+            </div>
+    </form>
+</div>
+    <div class="">
+        <section>
+            <hr />
+            @{
+                if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                {
+                    <div>
+                       
+                    </div>
+                }
+                else
+                {
+                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                        <div>
+                            <p>
+                                @foreach (var provider in Model.ExternalLogins!)
+                                {
+                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                }
+                            </p>
+                        </div>
+                    </form>
+                }
+            }
+        </section>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+<script src="path/to/pikaday-i18n/zh.js"></script>
+<script>
+    var picker = new Pikaday({
+        field: document.getElementById('datepicker'),
+        yearRange: [1950, new Date().getFullYear()], // 设置年份范围从 1950 年到当前年份
+        i18n: {
+            previousMonth: '上個月',
+            nextMonth: '下個月',
+            months: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+            weekdays: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
+            weekdaysShort: ['日', '一', '二', '三', '四', '五', '六']
+        }
+    });
+
+</script>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+   
+
+}
+<script src="https://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+<script src="~/assets/js/login.js"></script>
+

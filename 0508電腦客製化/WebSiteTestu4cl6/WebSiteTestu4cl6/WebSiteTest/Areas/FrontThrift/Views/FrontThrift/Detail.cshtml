@@ -1,0 +1,804 @@
+﻿<div class="productDetailsSec mt-120" id="app">
+    <div class="container">
+        <div class="row" v-for="item in ThriftProductsDTO">
+            <div class="col-lg-6 mt-30"  >
+                <div class="product-image-box vertical sticky-product-image">
+                    <div class="product-img-big productArrow position-relative slider-for-two">
+                        <div class="single-big-img zoom-img position-relative zoom-img radious5">
+                            <span class="badge position-absolute leftTop">
+                                Hot
+                            </span>
+                            <img src="assets/images/product-details/product-details-1.png" alt="pictures">
+                        </div>
+                        <div class="single-big-img zoom-img position-relative zoom-img radious5">
+                            <span class="badge position-absolute leftTop">
+                                Hot
+                            </span>
+                            <img src="assets/images/product-details/product-details-2.png" alt="pictures">
+                        </div>
+                        <div class="single-big-img zoom-img position-relative zoom-img radious5">
+                            <span class="badge position-absolute leftTop">
+                                Hot
+                            </span>
+                            <img src="assets/images/product-details/product-details-3.png" alt="pictures">
+                        </div>
+                        <div class="single-big-img zoom-img position-relative zoom-img radious5">
+                            <span class="badge position-absolute leftTop">
+                                Hot
+                            </span>
+                            <img src="assets/images/product-details/product-details-4.png" alt="pictures">
+                        </div>
+                        <div class="single-big-img zoom-img position-relative zoom-img radious5">
+                            <span class="badge position-absolute leftTop">
+                                Sale
+                            </span>
+                            <img src="assets/images/product-details/product-details-5.png" alt="pictures">
+                        </div>
+                        <div class="single-big-img zoom-img position-relative zoom-img radious5">
+                            <span class="badge position-absolute leftTop">
+                                Sale
+                            </span>
+                            <img src="assets/images/product-details/product-details-2.png" alt="pictures">
+                        </div>
+                        <div class="single-big-img zoom-img position-relative zoom-img radious5">
+                            <span class="badge position-absolute leftTop">
+                                Sale
+                            </span>
+                            <img src="assets/images/product-details/product-details-3.png" alt="pictures">
+                        </div>
+                    </div>
+                    <div class="slider-nav navbarArrow p-0 slider-nav-two">
+                        <div>
+                            <span class="nav-item border-0 radious5">
+                                <img src="assets/images/product-details/product-details-1.png" alt="pictures">
+                            </span>
+                        </div>
+                        <div>
+                            <span class="nav-item border-0 radious5">
+                                <img src="assets/images/product-details/product-details-2.png" alt="pictures">
+                            </span>
+                        </div>
+                        <div>
+                            <span class="nav-item border-0 radious5">
+                                <img src="assets/images/product-details/product-details-3.png" alt="pictures">
+                            </span>
+                        </div>
+                        <div>
+                            <span class="nav-item border-0 radious5">
+                                <img src="assets/images/product-details/product-details-4.png" alt="pictures">
+                            </span>
+                        </div>
+                        <div>
+                            <span class="nav-item border-0 radious5">
+                                <img src="assets/images/product-details/product-details-5.png" alt="pictures">
+                            </span>
+                        </div>
+                        <div>
+                            <span class="nav-item border-0 radious5">
+                                <img src="assets/images/product-details/product-details-2.png" alt="pictures">
+                            </span>
+                        </div>
+                        <div>
+                            <span class="nav-item border-0 radious5">
+                                <img src="assets/images/product-details/product-details-3.png" alt="pictures">
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mt-30">
+                <div class="productDetailsContent">
+                    <h2 class="fw-700">{{item.thriftProductName}}</h2>
+                    <div class="product-price mt-2 pt-1 lh-1 d-flex align-items-center">
+                        <h3 class="d-inline-block colorBage1 fw-600" :id="item.thriftProductId">NT${{item.thriftProductUnitPrice}}</h3>
+                        <span class="regular-price font-16 ms-2"> $110.00 </span>
+                    </div>
+                    <ul class="rating mt-2 pt-1 align-items-center">
+                        <li> <i class="flaticon-star-1"></i> </li>
+                        <li> <i class="flaticon-star-1"></i> </li>
+                        <li> <i class="flaticon-star-1"></i> </li>
+                        <li> <i class="flaticon-star-1"></i> </li>
+                        <li> <i class="flaticon-star-1"></i> </li>
+                        <li class="mb--5 ms-2"> (6 Reviews)</li>
+                    </ul>
+                    <p class="mt-2 pt-1">
+                        Dicta sunt explicabo. Nemo enim ipsam voluptatem voluptas sit odit aut fugit, sed
+                        quia consequuntur. Lorem ipsum nonum eirmod dolor.
+                    </p>
+                    <ul class="d-flex font-roboto pt-3 align-items-center">
+                        <li>
+                            <a href="compare.html" class="d-flex lh-1 colorBlack me-2 pe-2 align-items-center">
+                                <span class="me-1"> <i class="flaticon-left-and-right-arrows"></i> </span>
+                                <span class="text">
+                                    Add to Compare
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="faq.html" class="d-flex lh-1 colorBlack align-items-center">
+                                <span class="me-1"> <i class="flaticon-comment"></i> </span>
+                                <span class="text">
+                                    Ask Question
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="fw-600 colorBlaack mt-3">
+                        數量:
+                    </p>
+                    <div class="d-flex align-items-center">
+                        <div class="qtySelector pdCount me-3 mt-2">
+                            <span class="decreaseQty">
+                                <i class="flaticon-minus-sign"></i>
+                            </span>
+                            <input type="text" class="qtyValue p-0 me-2 ms-2 text-center" value="1">
+                            <span class="increaseQty">
+                                <i class="flaticon-plus-1"></i>
+                            </span>
+                        </div>
+                        <p class="font-roboto colorBlack pt-1 lh-1 d-flex align-items-center font-14">
+                            <span class="me-1 greenc"><i class="flaticon-select"></i></span>
+                            <span> In Stock</span>
+                        </p>
+                    </div>
+                    <div class="d-flex mt-3 align-items-center">
+                        <span class="lh-0 me-1"> <i class="flaticon-point"></i></span>
+                        <span>Order Now, Only {{item.thriftProductQty}} Left !</span>
+                    </div>
+                    <button class="btn-base w-100 mt-3" @@click="addcart(item.thriftProductId)">
+                        Add To Cart
+                    </button>
+                    <div class="d-flex mt-3 align-items-center">
+                        <span class="lh-0 me-1"> <i class="flaticon-shipped"></i></span>
+                        <p class="font-14">
+                            SPENT <span class="fw-500 colorBlaack">$399.00</span> MORE FOR FREE SHIPPING
+                        </p>
+                    </div>
+                    <div class="mt-2 d-flex align-items-center">
+                        <p class="me-3 fw-500 colorBlack">Follow Us:</p>
+                        <ul class="media-box d-flex align-items-center">
+                            <li class="mediaLIst pe-2">
+                                <a class="media w-auto h-auto bgTransparent font-18 hover-base"
+                                   href="https://www.facebook.com/profile.php?id=100090862913236" target="_blank">
+                                    <i class="flaticon-facebook-app-symbol"></i>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <div class="checked-box mt-2">
+                        <form>
+                            <div class="form-group d-flex align-items-center">
+                                <input type="checkbox" id="html">
+                                <label class="ms-2" for="html">
+                                    I agree with all company terms & condition
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                    <button class="btn-base blackBtn mt-3 w-100" onclick="redirectToCart()">
+                        Buy It Now
+                    </button>
+                    <p class="fw-600 colorBlaack mt-3">
+                        Guranteed Safe Checkout:
+                    </p>
+                    <ul class="d-flex align-items-center mt-2 pt-1">
+                        <li>
+                            <a href="#0" class="d-inline-block me-2">
+                                <img src="assets/images/innerpage/pay-1.jpg" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#0" class="d-inline-block me-2">
+                                <img src="assets/images/innerpage/pay-2.jpg" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#0" class="d-inline-block me-2">
+                                <img src="assets/images/innerpage/pay-3.jpg" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#0" class="d-inline-block me-2">
+                                <img src="assets/images/innerpage/pay-4.jpg" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#0" class="d-inline-block me-2">
+                                <img src="assets/images/innerpage/pay-5.jpg" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#0" class="d-inline-block">
+                                <img src="assets/images/innerpage/pay-6.jpg" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="mt-1">
+                        <li>
+                            <span class="mt-1 pt-1 me-1 pe-1">
+                                <img src="assets/images/innerpage/box.png"
+                                     alt="pictures">
+                            </span><span class="fw-500 mt-3 pt-1 pe-1 colorBlack">
+                                Estimate
+                                Delivery :
+                            </span><span class="fw-500"> 10-25 Aug, 2022 </span>
+                        </li>
+                        <li>
+                            <span class="mt-1 pt-1 me-1 pe-1">
+                                <img src="assets/images/innerpage/box.png"
+                                     alt="pictures">
+                            </span><span class="fw-500 mt-1 pt-1 pe-1 colorBlack">
+                                Delivers
+                                In :
+                            </span><span class="fw-500"> 3-7 Working Days </span>
+                        </li>
+                    </ul>
+                    <ul class="d-flex align-items-center justify-content-between flex-wrap">
+                        <li class="mt-3 lh-11 d-flex font-josefin align-items-center">
+                            <div class="icon font-20 me-3"> <i class="flaticon-briefcase"></i> </div>
+                            <div class="fw-500 colorBlack">
+                                <p>Money back <br> guarantee</p>
+                            </div>
+                        </li>
+                        <li class="mt-3 lh-11 d-flex font-josefin align-items-center">
+                            <div class="icon font-20 me-3"> <i class="flaticon-truck"></i> </div>
+                            <div class="fw-500 colorBlack">
+                                <p>Free Shipping & <br> Return</p>
+                            </div>
+                        </li>
+                        <li class="mt-3 lh-11 d-flex font-josefin align-items-center">
+                            <div class="icon font-20 me-3"> <i class="flaticon-security"></i> </div>
+                            <div class="fw-500 colorBlack">
+                                <p>Comportable <br> Support</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="description pt-60 pb-60">
+    <div class="container">
+        <div class="row">
+            <ul class="nav nav-pills desktab justify-content-center" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-description-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-description" type="button" role="tab"
+                            aria-controls="pills-description" aria-selected="true">
+                        商品描述
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-additional-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-additional" type="button" role="tab"
+                            aria-controls="pills-additional" aria-selected="false">
+                        Additional
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-size-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-size" type="button" role="tab"
+                            aria-controls="pills-size" aria-selected="false">
+                        Size Chart
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-reviews-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-reviews" type="button" role="tab"
+                            aria-controls="pills-reviews" aria-selected="false">
+                        Reviews
+                    </button>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-description" role="tabpanel"
+                     aria-labelledby="pills-description-tab" tabindex="0">
+                    <div class="row align-items-center">
+                        <div class="col-12 mt-30">
+                            <h3>
+                                Product Details:
+                            </h3>
+                            <p class="mt-3">
+                                Assertively conceptualize parallel process improvements through user friendly colighue to action items.
+                                Interactively antidos cultivate interdependent customer service without clicks-and-mortar e-services.
+                                Proactively cultivate go forward testing procedures with accurate quality vectors.
+                                Globally aiembrace ethical functionalities via empowered scenarios. Phosfluorescently restore highly efficient opportunities and client-focused infomediaries. Enthusiastically transition multidisciplinary outside the box thinking without premium networks. Progressive supply clicks-and-mortar human capital through enterprise-wide web services. Objectivey bester provide access to extensible processes better than more qulification dumber there stoaling through 24/365 solutions.
+                            </p>
+                        </div>
+                        <div class="col-lg-6 mt-3">
+                            <h3>
+                                Specification:
+                            </h3>
+                            <ul class="mt-3 descriptionList">
+                                <li class="descriptionLi"> Knit waistband cuffs and collar </li>
+                                <li class="descriptionLi">
+                                    Durable metal zipper with alpha branding and
+                                    logo
+                                </li>
+                                <li class="descriptionLi">
+                                    Main: 100% flight nylon. Lining: 100% nylon
+                                    lining
+                                </li>
+                                <li class="descriptionLi">
+                                    Knit waistband cuffs and collar zipper closure
+                                    with a storm flap
+                                </li>
+                                <li class="descriptionLi">
+                                    Signature zippered utility-pencil pocket on the
+                                    sleeve the ribbon keychain
+                                </li>
+                                <li class="descriptionLi">
+                                    Style guide Pair with a crew neck, jeans and
+                                    sneakers.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 mt-3">
+                            <div class="position-relative">
+                                <img class="w-100" src="assets/images/innerpage/video-thumb.png" alt="pictures">
+                                <div class="position-absolute videoAbsolute">
+                                    <div class="videopopup">
+                                        <a class="popupVideo VideoIcon" title="Video Gallery"
+                                           href="https://www.youtube.com/watch?v=p25gICT63ek">
+                                            <i class="flaticon-play-button-arrowhead"></i>
+                                        </a>
+                                        <span class="border-animation border-1"></span>
+                                        <span class="border-animation border-2"></span>
+                                        <span class="border-animation border-3"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-reviews" role="tabpanel"
+                     aria-labelledby="pills-reviews-tab" tabindex="0">
+                    <div class="row">
+                        <div class="col-12 mt-30">
+                            <div class="product-drescription">
+                                <div class="review-single pt-0 hed">
+                                    <ul class="rating font-14">
+                                        <li><i class="flaticon-star-1"></i> </li>
+                                        <li><i class="flaticon-star-1"></i> </li>
+                                        <li><i class="flaticon-star-1"></i> </li>
+                                        <li><i class="flaticon-star-1"></i> </li>
+                                        <li><i class="flaticon-star-1"></i> </li>
+                                        <li> <span class="ps-2 colorGray">BASED ON 100 REVIEW</span></li>
+                                    </ul>
+                                </div>
+                                <div class="review-single">
+                                    <div class="left">
+                                        <ul class="rating mt-2 font-14">
+                                            <li><i class="flaticon-star-1"></i> </li>
+                                            <li><i class="flaticon-star-1"></i> </li>
+                                            <li><i class="flaticon-star-1"></i> </li>
+                                            <li><i class="flaticon-star-1"></i> </li>
+                                            <li><i class="flaticon-star-1"></i> </li>
+                                        </ul>
+                                        <h6 class="mt-1 pt-2 font-18 fw-600">
+                                            Vary Good quality Theme
+                                            <span class="d-block pt-1 fw-500 font-14">
+                                                Raul Bates on January
+                                                28, 2022
+                                            </span>
+                                        </h6>
+                                        <p class="pt-1 mt-2 ">
+                                            Assertively conceptualize parallel process improvements through user
+                                            friendly colighue to action items. Interactively antidos cultivate
+                                            interdependent customer service without clicks-and-mortar e-services.
+                                        </p>
+                                    </div>
+                                    <a href="#0" class="right-box mt-2 pt-1  colorBage1 underline font-14">
+                                        Report this Comments
+                                    </a>
+                                </div>
+                                <div class="review-single">
+                                    <div class="left">
+                                        <ul class="rating mt-2 font-14">
+                                            <li><i class="flaticon-star-1"></i> </li>
+                                            <li><i class="flaticon-star-1"></i> </li>
+                                            <li><i class="flaticon-star-1"></i> </li>
+                                            <li><i class="flaticon-star-1"></i> </li>
+                                            <li><i class="flaticon-star-1"></i> </li>
+                                        </ul>
+                                        <h6 class="mt-1 pt-2 font-18 fw-600">
+                                            Amazing Theme
+                                            <span class="d-block pt-1 fw-500 font-14">
+                                                Kurt Morgan on January
+                                                28, 2022
+                                            </span>
+                                        </h6>
+                                        <p class="pt-1 mt-2 ">
+                                            Assertively conceptualize parallel process improvements through user
+                                            friendly colighue to action items. Interactively antidos cultivate
+                                            interdependent customer service without clicks-and-mortar e-services.
+                                        </p>
+                                    </div>
+                                    <a href="#0"
+                                       class="right-box mt-2 pt-1  colorBage1 underline font-14">
+                                        Report this Comments
+                                    </a>
+                                </div>
+                                <div class="review-from-box mt-30">
+                                    <h6 class="font-18">
+                                        Write a Review
+                                    </h6>
+                                    <div class="ratting-box mt-3">
+                                        <p> RATING </p>
+                                        <div class="ratting pt-2 font-14">
+                                            <i class="flaticon-star-1"></i>
+                                            <i class="flaticon-star-1"></i>
+                                            <i class="flaticon-star-1"></i>
+                                            <i class="flaticon-star-1"></i>
+                                            <i class="flaticon-star-1"></i>
+                                        </div>
+                                    </div>
+                                    <form action="#0" class="commonform">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-6 mt-3">
+                                                <div class="form-group">
+                                                    <label class="colorBlaack" for="name">NAME</label>
+                                                    <input id="name" type="text" class="form-control mt-2" placeholder="David Warner">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 mt-3">
+                                                <div class="form-group">
+                                                    <label class="colorBlaack" for="tid2">Number</label>
+                                                    <input id="tid2" type="number" class="form-control mt-2" placeholder="Phone Number">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 mt-3">
+                                                <div class="form-group">
+                                                    <label class="colorBlaack" for="tid3">Phone Number*</label>
+                                                    <input id="tid3" type="email" class="form-control mt-2" placeholder="support@gmail.com">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 mt-3">
+                                                <div class="form-group">
+                                                    <label class="colorBlaack" for="tid4"> REVIEW TITLE</label>
+                                                    <input id="tid4" type="email" class="form-control mt-2" placeholder="Give your review title">
+                                                </div>
+                                            </div>
+                                            <div class="col-12 mt-3">
+                                                <div class="form-group">
+                                                    <label class="colorBlaack" for="tid9">BODY OF REVIEW (1500)</label>
+                                                    <textarea id="tid9" class="form-control mt-2" placeholder="Write Your Comments Here" cols="10" rows="10">
+                                                                </textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 mt-4">
+                                                <button type="submit" class="btn-base">
+                                                    Submit Review
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-additional" role="tabpanel"
+                     aria-labelledby="pills-additional-tab" tabindex="0">
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="pt-30">
+                                Assertively conceptualize parallel process improvements through user friendly colighue to action items. Interactively antidos cultivate interdependent customer service without clicks-and-mortar e-services. Proactively cultivate go forward testing procedures with accurate quality vectors. Globally aiembrace ethical functionalities via empowered scenarios. Phosfluorescently restore highly efficient opportunities and client-focused infomediaries. Enthusiastically transition multidisciplinary outside the box thinking without premium networks. Progressive supply clicks-and-mortar human capital through enterprise-wide web services. Objectivey bester provide access to extensible processes better than more qulification dumber there stoaling through 24/365 solutions.
+                            </p>
+                            <ul class="mt-3 descriptionList">
+                                <li class="descriptionLi"> Knit waistband cuffs and collar </li>
+                                <li class="descriptionLi">
+                                    Durable metal zipper with alpha branding and
+                                    logo
+                                </li>
+                                <li class="descriptionLi">
+                                    Main: 100% flight nylon. Lining: 100% nylon
+                                    lining
+                                </li>
+                                <li class="descriptionLi">
+                                    Knit waistband cuffs and collar zipper closure
+                                    with a storm flap
+                                </li>
+                                <li class="descriptionLi">
+                                    Signature zippered utility-pencil pocket on the
+                                    sleeve the ribbon keychain
+                                </li>
+                                <li class="descriptionLi">
+                                    Style guide Pair with a crew neck, jeans and
+                                    sneakers.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-size" role="tabpanel"
+                     aria-labelledby="pills-size-tab" tabindex="0">
+                    <div class="row mt-30">
+                        <div class="col-12">
+                            <h3>
+                                Size Guide:
+                            </h3>
+                            <p class=" mt-2">
+                                Assertively conceptualize parallel process improvements through
+                                user friendly colighue to action items.
+                            </p>
+                            <div class="size-tabble mt-4">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Size</th>
+                                            <th>XXS - XS</th>
+                                            <th>XS - S</th>
+                                            <th>S - M</th>
+                                            <th>M - L</th>
+                                            <th>L - XL</th>
+                                            <th>XL - XXL</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>ARGENTINA</td>
+                                            <td>7</td>
+                                            <td>8</td>
+                                            <td>9</td>
+                                            <td>10</td>
+                                            <td>11</td>
+                                            <td>12</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BOLIVIA</td>
+                                            <td>8</td>
+                                            <td>9</td>
+                                            <td>10</td>
+                                            <td>11</td>
+                                            <td>12</td>
+                                            <td>13</td>
+                                        </tr>
+                                        <tr>
+                                            <td>COLOMBIA</td>
+                                            <td>26</td>
+                                            <td>28</td>
+                                            <td>30</td>
+                                            <td>32</td>
+                                            <td>34</td>
+                                            <td>36</td>
+                                        </tr>
+                                        <tr>
+                                            <td>China</td>
+                                            <td>34</td>
+                                            <td>36</td>
+                                            <td>38</td>
+                                            <td>40</td>
+                                            <td>42</td>
+                                            <td>44</td>
+                                        </tr>
+                                        <tr>
+                                            <td>MEXICO</td>
+                                            <td>32</td>
+                                            <td>34</td>
+                                            <td>36</td>
+                                            <td>38</td>
+                                            <td>40</td>
+                                            <td>42</td>
+                                        </tr>
+                                        <tr>
+                                            <td>JAMAICA</td>
+                                            <td>40</td>
+                                            <td>42</td>
+                                            <td>44</td>
+                                            <td>46</td>
+                                            <td>48</td>
+                                            <td>50</td>
+                                        </tr>
+                                        <tr>
+                                            <td>MEXICO</td>
+                                            <td>32</td>
+                                            <td>34</td>
+                                            <td>36</td>
+                                            <td>38</td>
+                                            <td>40</td>
+                                            <td>42</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Australia</td>
+                                            <td>6</td>
+                                            <td>8</td>
+                                            <td>10</td>
+                                            <td>12</td>
+                                            <td>14</td>
+                                            <td>16</td>
+                                        </tr>
+                                        <tr>
+                                            <td>USA</td>
+                                            <td>33</td>
+                                            <td>44</td>
+                                            <td>55</td>
+                                            <td>66</td>
+                                            <td>77</td>
+                                            <td>88</td>
+                                        </tr>
+                                        <tr>
+                                            <td>UK</td>
+                                            <td>6</td>
+                                            <td>8</td>
+                                            <td>10</td>
+                                            <td>12</td>
+                                            <td>14</td>
+                                            <td>16</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pant</td>
+                                            <td>22-23 </td>
+                                            <td>24-25</td>
+                                            <td>26-27</td>
+                                            <td>28-29</td>
+                                            <td>30-31</td>
+                                            <td>32-33</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/vue/vue.global.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js" integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        
+        const test = {
+            data() {
+                return {
+                    ThriftProductsDTO: [],
+                    baseAddress:'',
+                    shoppoingitem: [],
+                    sum: 0,
+                    newQty:0,
+                    cartItemExists: false,
+                    thriftshoppingCartQty: 0,
+                };
+            },
+            mounted() {
+                let _this = this;
+                var urlParams = new URLSearchParams(window.location.search);
+                this.thriftProductId = urlParams.get('id');
+                //this.baseAddress = "http://172.18.102.115/WebSite";
+                this.baseAddress = "https://localhost:7117";
+                this.getThriftProducts();
+            },
+            methods: {
+                getThriftProducts: function (thriftProductId) {
+                    let _this = this;
+                    let arrayDTO = [];
+                    axios.get(`${this.baseAddress}/api/ShowThriftProducts/${this.thriftProductId}`).then(response => {
+                        console.log("getproducts");
+                        console.log(response);
+                        arrayDTO.push(response.data)
+                        _this.ThriftProductsDTO = arrayDTO;
+                        this.showthriftShoppingCart();
+                    }).then(response => { this.addQty(); }).catch(error => {
+                        console.log("Error fetching data:", error); // Add this line for debugging
+                    });
+                },
+                addQty:function(){
+                    //console.log($(".increaseQty"))
+                    if ($(".increaseQty").length) {
+                        var minVal = 1,
+                            maxVal = 100;
+                        $(".increaseQty").on("click", function () {
+                            var parentElm = $(this).parents(".qtySelector");
+                            $(this).addClass("clicked");
+                            setTimeout(function () {
+                                $(".clicked").removeClass("clicked");
+                            }, 100);
+                            var value = parentElm.find(".qtyValue").val();
+                            if (value < maxVal) {
+                                value++;
+                            }
+                            parentElm.find(".qtyValue").val(value);
+                        });
+                    };
+
+                    if ($(".decreaseQty").length) {
+                        $(".decreaseQty").on("click", function () {
+                            var parentElm = $(this).parents(".qtySelector");
+                            $(this).addClass("clicked");
+                            setTimeout(function () {
+                                $(".clicked").removeClass("clicked");
+                            }, 100);
+                            var value = parentElm.find(".qtyValue").val();
+                            if (value > 1) {
+                                value--;
+                            }
+                            parentElm.find(".qtyValue").val(value);
+                        });
+                    };
+                },
+                addcart: function (thriftProductId) {
+                    let _this = this;
+                    var thriftProductUnitPrice = $(`#${thriftProductId}`).text().slice(3);
+                    var thriftProductName = $(`#${thriftProductId}`).parent().prev().text();
+                    var thriftshoppingCart = {};
+                    thriftshoppingCart.thriftProductId = thriftProductId;
+                    thriftshoppingCart.customerId = '101';
+                    thriftshoppingCart.thriftProductUnitPrice = thriftProductUnitPrice;
+                    thriftshoppingCart.thriftProductName = thriftProductName;
+
+                    var value = parseInt($(".qtyValue").val());
+
+                    axios.get(`${this.baseAddress}/api/ShowThriftProducts/cart/101/${thriftProductId}`).then(response => {
+                        if (response.data && response.data.length > 0) {
+                            var existingCartItem = response.data[0];
+                            var currentQty = existingCartItem.thriftProductQty;
+                            this.newQty = currentQty + (value || 1);
+                            //existingCartItem.thriftProductQty = this.newQty;
+
+                            console.log("資料表數量:");
+                            console.log(this.newQty);
+                            console.log("增加數量:");
+                            console.log(value);
+                            axios.put(`${this.baseAddress}/api/ShowThriftProducts/cart/101/${thriftProductId}/${this.newQty}`).then(response => {
+                                alert(response.data);
+                                this.showthriftShoppingCart(value);
+                            });
+                        } else {
+                            thriftshoppingCart.qty = value || 1;
+                            this.newQty = this.thriftshoppingCartQty + thriftshoppingCart.qty;
+                            axios.post(`${this.baseAddress}/api/ShowThriftProducts`, thriftshoppingCart).then(response => {
+                                alert("第一次加入購物車");
+                                alert(response.data);
+                                console.log("資料表數量:",this.newQty);
+                                console.log("原來數量:", this.thriftshoppingCartQty);
+                                console.log("增加數量:", value);
+                                this.showthriftShoppingCart(value);
+                                this.cartItemExists = true;
+                                this.thriftshoppingCartQty = this.newQty; // 將新數量赋值给 this.thriftshoppingCartQty
+                            });
+                        }
+                    }).catch(error => {
+                        console.log("未加入購物車");
+                    });
+                    this.getThriftProducts(thriftProductId);
+                },
+
+                showthriftShoppingCart: function (value) {
+                    let _this = this;
+                    axios.get(`${this.baseAddress}/api/ShowThriftProducts/cart/101`).then(response => {
+                        //alert(response.data.length);
+                        var newresponse = response.data;
+                        for (var i = 0; i < response.data.length; i++) {
+                            newresponse[i].countprice = response.data[i].productUnitPrice * response.data[i].productQty;
+                            //newresponse[i].productPic = `./images/ShowThriftProducts/${this.ProductDTOes[i].productPic}.jpg`;
+                            newresponse[i].newQty = value;
+                        };
+                        this.shoppoingitem = newresponse;
+                        console.log("shop:....")
+                        console.log(this.shoppoingitem);
+                        //console.log(newresponse[i].newQty)
+                    }).then(reponse => {
+                        this.total();
+                    })
+                },
+                total: function () {
+                    this.sum = 0;
+                    for (var i = 0; i < this.shoppoingitem.length; i++) {
+                        this.sum += this.shoppoingitem[i].countprice
+                    }
+
+                },
+            },
+        };
+        const app = Vue.createApp(test).mount("#app");
+        function redirectToCart() {
+            //window.location.href = "http://172.18.102.115/WebSite/FrontThrift/FrontThrift/cart";
+            window.location.href = "/FrontThrift/FrontThrift/cart";
+        }
+    </script>
+}
